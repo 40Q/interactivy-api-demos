@@ -13,7 +13,7 @@ const getPosts = async (keyword) => {
 
 store( 'simple-search-posts', {
 	actions: {
-		searching: async ( event ) => {
+		searching: ( event ) => {
 			const context = getContext();
 
 			if(event.target.value.length < 2) {
@@ -23,8 +23,13 @@ store( 'simple-search-posts', {
 			}
 
 			context.searching = true;
-
 			context.keyword = event.target.value;
+		},
+	},
+	callbacks: {
+		searchCallback: async () => {
+			const context = getContext();
+			
 			const data = await getPosts(context.keyword);
 			context.count = data.length;
 
@@ -35,6 +40,6 @@ store( 'simple-search-posts', {
 			} else {
 				context.results = data;
 			}
-		},
+		}
 	}
 } );

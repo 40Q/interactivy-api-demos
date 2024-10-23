@@ -22,6 +22,7 @@ $context = array(
 <div
 	<?php echo get_block_wrapper_attributes(); ?>
 	data-wp-interactive="simple-search-posts"
+	data-wp-watch="callbacks.searchCallback"
 	<?php echo wp_interactivity_data_wp_context( $context ); ?>
 >
 	<div class="wrapper">
