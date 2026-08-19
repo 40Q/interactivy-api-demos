@@ -21,6 +21,17 @@
 		"@wordpress/interactivity": "^6.8.2"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.0.2"
+		"@wordpress/scripts": "^34.1.0"
+	},
+	"overrides": {
+		"copy-webpack-plugin": {
+			"serialize-javascript": "^7.1.0"
+		},
+		"sockjs": {
+			"uuid": "^11.1.1"
+		},
+		"@wordpress/scripts": {
+			"adm-zip": "^0.6.0"
+		}
 	}
 }
